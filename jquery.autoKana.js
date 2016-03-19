@@ -1,3 +1,6 @@
+// Copyright (c) 2016 Kadzuya Okamoto @ ARoW (http://www.arow.info)
+//
+// Based on the AutoRuby library created by:
 // Copyright (c) 2013 Keith Perhac @ DelfiNet (http://delfi-net.com)
 //
 // Based on the AutoRuby library created by:
@@ -23,7 +26,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (function ($) {
-    $.fn.autoKana = function (element1, element2, passedOptions) {
+    $.fn.autoKana = function (element1, element2, passedOptions, callback) {
 
         var options = $.extend(
             {
@@ -152,6 +155,7 @@
                 if (active) {
                     var _val = _toKatakana(baseKana + values.join(''));
                     elKana.val(_val);
+                    callback();
                 }
             }
         };
